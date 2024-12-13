@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kraizi World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="imagenes/icono_kw.png">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Uncial+Antiqua&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Kraizi World</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="index.html#razas">Razas</a>
+        <a href="index.html#clases">Clases</a>
+        <a href="monstruos.html"> Libro de Monstruos</a>
+        <a href="formulario.html">Contacto</a>
+    </nav>
+    <video class="background-video" autoplay muted loop>
+        <source src="videos/particulas_fondo.mp4" type="video/mp4">
+        Tu navegador no soporta este formato de video.
+    </video>
+    <main>
+        <h2>Formulario</h2>
+        <form>
+            <!-- Sección 1: Datos Personales -->
+            <label for="nombre">Nombre:
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" pattern="[A-ZÁÉÍÓÚÑ][a-záéíóúñ]*"
+                    required>
+            </label>
+
+            <label for="apellidos">Apellidos:
+                <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos"
+                    pattern="[A-ZÁÉÍÓÚÑ][a-záéíóúñ]*( [A-ZÁÉÍÓÚÑ][a-záéíóúñ]*)*" required>
+            </label>
+
+            <label for="genero">Género:
+                <select id="genero" name="genero" required>
+                    <option value="masculino">No definir</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </label>
+
+            <label for="direccion">Dirección:
+                <input type="text" id="direccion" name="direccion" placeholder="Tu dirección completa" required>
+            </label>
+
+            <label for="telefono">Teléfono:
+                <input type="tel" id="telefono" name="telefono" placeholder="9 dígitos" pattern="[0-9]{9}" required>
+            </label>
+
+            <label for="email">Correo Electrónico:
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+            </label>
+
+            <!-- Sección 2: Información Adicional -->
+            <label for="cp">Código Postal:
+                <input type="text" id="cp" name="cp" placeholder="5 dígitos" pattern="[0-9]{5}" required>
+            </label>
+
+            <label for="ciudad">Ciudad:
+                <input type="text" id="ciudad" name="ciudad" placeholder="Nombre de tu ciudad" required>
+            </label>
+
+            <label for="pais">País:
+                <input type="text" id="pais" name="pais" placeholder="Nombre de tu país" required>
+            </label>
+
+            <label for="fecha">Fecha de Nacimiento:
+                <input type="date" id="fecha" name="fecha" required>
+            </label>
+            <label for="acepto"> <input type="checkbox" id="acepto" name="privacidad" value="Acepto" required>
+                Acepto que se recojan mis datos de acuerdo a la Ley de Protección de Privacidad
+            </label>
+            <!-- Sección 3: Información de Juego -->
+            <h2 class="heading-container">
+                Recopilación de intereses
+                <div class="tooltip">
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-text">No es obligatorio introducir estos datos, pero de introducirlos se usarán
+                        para una mejor experiencia de campaña para los usuarios.</span>
+                </div>
+            </h2>
+            <p class="parrafoizquierdo">¿Qué tipo de campaña prefieres?</p>
+            <label >
+                <input type="radio" name="rol" value="Aventura"> Aventura
+            </label>
+
+            <label>
+                <input type="radio" name="rol" value="Estrategia"> Estrategia
+            </label>
+
+            <label>
+                <input type="radio" name="rol" value="Fantástico"> Fantástico
+            </label>
+
+            <p class="parrafoizquierdo">¿Qué clase de personaje te atrae más?</p>
+            <label>
+                <input type="radio" name="clase" value="Guerrero"> Guerrero
+            </label>
+
+            <label>
+                <input type="radio" name="clase" value="Mago"> Mago
+            </label>
+
+            <label>
+                <input type="radio" name="clase" value="Explorador"> Explorador
+            </label>
+
+            <p class="parrafoizquierdo">¿Qué habilidades prefieres desarrollar?</p>
+            <label>
+                <input type="checkbox" name="habilidades" value="Combate"> Combate
+            </label>
+
+            <label>
+                <input type="checkbox" name="habilidades" value="Magia"> Magia
+            </label>
+
+            <label>
+                <input type="checkbox" name="habilidades" value="Sigilo"> Sigilo
+            </label>
+
+            <p class="parrafoizquierdo"> Comentarios adicionales</p>
+            <label for="mensaje">Mensaje:
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí"
+                    required></textarea>
+            </label>
+
+            <!-- Botones -->
+            <button type="submit">Enviar</button>
+            <button type="reset" class="reset-button">Restablecer</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Kraizi World</p>
+    </footer>
+</body>
+
+</html>
