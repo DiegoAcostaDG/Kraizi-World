@@ -23,18 +23,18 @@ class Personaje {
             <p><strong>Clase:</strong> ${this.clase}</p>
             <p><strong>Nivel:</strong> ${this.nivel}</p>
             <p><strong>Puntos de Vida:</strong> ${this.puntosDeVida}</p>
-            <p><strong>Habilidades:</strong> ${this.habilidades.join(', ')}</p>
+            <p><strong>Equipo:</strong> ${this.habilidades.join(', ')}</p>
         `;
     }
 }
 
 const miPersonaje = new Personaje(
-    'Aragorn',
-    'Humano',
+    'Mr Seta',
+    'Treant',
     'Guerrero',
     1,
     10,
-    ['Espada', 'Arco', 'Estrategia']
+    ['Espada', 'Arco', 'Cantimplora']
 );
 
 document.getElementById('personaje-info').innerHTML = miPersonaje.mostrarInfo();
