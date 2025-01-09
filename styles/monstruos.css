@@ -1,0 +1,125 @@
+/* Paleta de colores y variables de texto */
+:root {
+    --naranja: #E07A5F;
+    --naranja-oscuro: #c99621;
+    --blanco: #F4F1DE;
+    --gris: #81B29A;
+    --negro: #333333;
+    --hover-color: #F2CC8F;
+    --nav: #e7f5e9;
+    --transparente: rgba(0, 0, 0, 0);
+    --fuente-principal: 'Uncial Antiqua', system-ui;
+    --fuente-secundaria: 'MedievalSharp', sans-serif;
+    --tamano-fuente: 1rem;
+    --espacio-formulario: 15px;
+    --tamano-boton: 1rem;
+    --radio-checkbox-size: 20px;
+    /* Colores para niveles de monstruos */
+    --ultra-level-color: lightgrey;  
+    --high-level-color: #f68989;   
+    --medium-level-color: lightblue; 
+    --low-level-color: lightgreen;
+}
+/* Estilo de las entradas de monstruos */
+.monster-entry {
+    display: flex;
+    align-items: center;
+    padding: 1vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-height: 20vh;
+    transition: all 0.3s ease;
+    width: 100%; /* Ocupa el 100% del ancho disponible */
+    max-width: 40vw; /* Establece un tamaño máximo */
+    margin: 2px; /* Margen entre las entradas */
+}
+
+.monster-entry:hover {
+    background-color: var(--naranja);
+    transform: scale(1.05);
+}
+
+.monster-entry img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.monster-entry .monster-description {
+    flex: 1;
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.monster-entry h3 {
+    font-family: var(--fuente-secundaria);
+    font-size: 4vw; /* Tamaño base para la fuente */
+    white-space: nowrap; /* Asegura que el texto no se rompa en varias líneas */
+    overflow: hidden; /* Oculta el texto que se sale del contenedor */
+    text-overflow: ellipsis; /* Muestra '...' si el texto es demasiado largo */
+    margin: 0; /* Elimina el margen */
+}
+
+/* Ajustes de tamaño de h3 dependiendo del nivel */
+.monster-entry.low-level h3 {
+    font-size: 1vw; /* Reducción de tamaño para niveles bajos */
+}
+.monster-entry.monster-entry.low-level img {
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.monster-entry.medium-level h3 {
+    font-size: 2vw; /* Reducción para niveles medios */
+}
+.monster-entry.monster-entry.medium-level img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.monster-entry.high-level h3 {
+    font-size: 3vw; /* Tamaño para niveles altos */
+}
+.monster-entry.monster-entry.high-level img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.monster-entry.ultra-level h3 {
+    font-size: 4vw; /* Reducción de tamaño para niveles ultra */
+}
+
+
+/* Ajustes de tamaños de monstruos según nivel */
+.monster-entry.ultra-level {
+    background-color: var(--ultra-level-color); 
+    border: 2px solid var(--gris);
+}
+
+.monster-entry.high-level {
+    background-color: var(--high-level-color); 
+    border: 2px solid var(--gris);
+    max-width: 30vw;
+}
+
+.monster-entry.medium-level {
+    background-color: var(--medium-level-color); 
+    border: 2px solid var(--gris);
+    max-width: 20vw;
+}
+
+.monster-entry.low-level {
+    background-color: var(--low-level-color); 
+    border: 2px solid var(--gris);
+    max-width: 10vw;
+}

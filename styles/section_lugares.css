@@ -1,0 +1,56 @@
+
+#lugares-por-descubrir {
+    padding: 20px;
+    text-align: center;
+}
+
+#lugares-por-descubrir h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: var(--fuente-principal);
+    text-underline-offset: var(--naranja);
+}
+
+#lugares-por-descubrir p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-family: var(--fuente-secundaria);
+}
+
+.lugar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.lugar-imagen {
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+.lugar-descripcion {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    font-family: var(--fuente-secundaria);
+}
+
+.lugar-descripcion h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.lugar-descripcion p {
+    color: #666;
+}
+
+.parrafoizquierdo {
+    text-align: left;
+    padding-left: 10px;
+}

@@ -1,5 +1,6 @@
-/*Paleta de colores y variables de texto*/
+/* Paleta de colores y variables de texto */
 :root {
+    --h1:#3e2723;
     --naranja: #E07A5F;
     --naranja-oscuro: #c99621;
     --blanco: #F4F1DE;
@@ -8,6 +9,13 @@
     --hover-color: #F2CC8F;
     --nav: #e7f5e9;
     --transparente: rgba(0, 0, 0, 0);
+    --fondosemitransparente:rgba(0, 0, 0, 0.5);
+    /* Colores para niveles de monstruos */
+    --ultra-level-color: lightgrey;  
+    --high-level-color: #f68989;   
+    --medium-level-color: lightblue; 
+    --low-level-color: lightgreen;
+    /*Estilo de texto*/
     --fuente-principal: 'Uncial Antiqua', system-ui;
     --fuente-secundaria: 'MedievalSharp', sans-serif;
     --tamano-fuente: 1rem;
@@ -16,21 +24,18 @@
     --radio-checkbox-size: 20px;
 }
 
-/* Reset General */
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden;
-    font-family: var(--fuente-secundaria), sans-serif;
+/* Cuerpo de la página */
+body {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
 }
 
 /* Estilo de Cabecera */
 header {
     color: var(--blanco);
-    padding: 20px 10px;
+    padding: 10px 10px;
     text-align: center;
     font-size: 2rem;
     font-family: var(--fuente-principal);
@@ -40,23 +45,26 @@ header {
 /* Navegación */
 nav {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 20px;
     font-size: large;
     background: var(--negro);
-    padding: 10px 0;
-    margin: 0 auto;
-    width: 80%;
-    position: sticky;
+    padding: 1vw;
+    margin: 0;
+    position: fixed;
     top: 0;
+    right: 1px; 
+    height: 100vh;
+    width: 8vw; 
     z-index: 10;
-    flex-wrap: wrap;
 }
 
 nav a {
     color: var(--blanco);
     text-decoration: none;
     font-size: 1.2em;
+    padding: 10px;
 }
 
 nav a:hover {
@@ -64,32 +72,31 @@ nav a:hover {
     color: var(--hover-color);
 }
 
-/* Fondo de Video */
-video.background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-}
-
 /* Estilo del contenido principal */
 main {
     position: relative;
     text-align: center;
+    padding: 2vh 2vw; /* Agrega márgenes internos */
     z-index: 1;
     background: var(--blanco);
     color: var(--negro);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    padding: 10px 0px;
-    margin: 0 auto;
-    width: 80%;
+    width: calc(92vw - 4vw); /* Ajusta el ancho para respetar los márgenes laterales */
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los monstruos se ajusten automáticamente */
+    justify-content: space-around; /* Alineación de los monstruos */
+    flex-grow: 1;
 }
 
-/*Estilo personalizado para el encabezado de secciones*/
+h3{
+    text-align: center;
+    font-size: xx-large;
+    color:var(--h1)
+}
+
+/* Estilo personalizado para el encabezado de secciones */
 section h2 {
     font-family: "Uncial Antiqua", system-ui;
     text-align: center;
@@ -101,420 +108,27 @@ section h2 {
     border-radius: 5px;
     display: inline-block;
 }
-
-p {
-    font-size: large;
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
-/* Formularios */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espacio-formulario);
-    padding-left: 5vw;
-    padding-right: 5vw;
-}
-
-label {
-    font-size: var(--tamano-fuente);
-    display: flex;
-    flex-direction: row;
-    /* Alineación horizontal */
-    align-items: center;
-    /* Alinea verticalmente el checkbox o radio con el texto */
-    gap: 10px;
-    /* Espacio entre el checkbox/radio y el texto */
-}
-
-/* Estilos de input, select, textarea */
-input,
-select,
-textarea {
-    padding: 8px;
-    font-size: var(--tamano-fuente);
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: var(--naranja);
-    outline: none;
-}
-
-/* Botones */
-button {
-    padding: 10px;
-    font-size: var(--tamano-boton);
-    color: var(--blanco);
-    background-color: var(--naranja);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: var(--naranja-oscuro);
-}
-
-.reset-button {
-    background-color: var(--gris);
-}
-
-.reset-button:hover {
-    background-color: var(--naranja-oscuro);
-}
-
-/* Tooltip */
-.tooltip {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.tooltip-icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    color: black;
-    font-weight: bold;
-    text-align: center;
-    line-height: 20px;
-    border: 1px solid black;
-    border-radius: 50%;
-    font-family: Arial, sans-serif;
-}
-
-.tooltip-text {
-    visibility: hidden;
-    width: 200px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.tooltip-text::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: black transparent transparent transparent;
-}
-
-.tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-}
-
-.carousel-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 1% 5%;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background: white;
-}
-
-.carousel-item {
-    flex: 0 0 auto;
-    width: 200px;
-    text-align: center;
-    background: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    scroll-snap-align: center;
-}
-
-.carousel-item:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background-color: var(--hover-color);
-}
-
-.carousel-item img {
-    max-width: 100%;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.carousel-item h3 {
-    margin: 10px 0 5px;
-    font-family: var(--fuente-secundaria);
-    font-size: 1.2em;
-}
-
-.carousel-container::-webkit-scrollbar {
-    height: 8px;
-}
-
-.carousel-container::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-.carousel-container::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-/* Estilo general del modal */
-.modal {
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Fondo oscuro translúcido */
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal.is-visible {
-    display: flex;
-}
-
-/* Contenedor del contenido del modal */
-.modal-content {
-    background: linear-gradient(135deg, #fdf5e6, #f7e1c1);
-    margin: auto;
-    padding: 30px;
-    border-radius: 15px;
-    width: 80%;
-    max-width: 900px;
-    max-height: 90vh;
-    overflow-y: auto;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    position: relative;
-    font-family: var(--fuente-secundaria);
-    animation: slideDown 0.4s ease-in-out;
-}
-
-/* Animación de entrada */
-@keyframes slideDown {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Estilo del título */
-.modal-content h3 {
-    text-align: c;
-    font-size: 2rem;
-    color: #5a3e1b;
-    /* Tono marrón oscuro */
-    text-align: center;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    /* Efecto de sombra */
-}
-
-/* Cuerpo del modal */
-.modal-body {
-    display: flex;
-    flex-direction: row;
-    /* Imagen y texto lado a lado */
-    gap: 20px;
-    /* Espaciado entre imagen y texto */
-    align-items: flex-start;
-    /* Alineación superior */
-}
-
-/* Estilo de la imagen */
-.modal-image {
-    flex: 1;
-    max-width: 40%;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    /* Sombra alrededor de la imagen */
-    border: 2px solid #e5c07b;
-    /* Borde suave */
-}
-
-/* Estilo del texto */
-.modal-text {
-    flex: 2;
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #333;
-    text-align: justify;
-}
-
-/* Botón de cierre */
-.close {
-    color: #333;
-    font-size: 1.5rem;
-    font-weight: bold;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.close:hover {
-    color: #e74c3c;
-    /* Color rojo al pasar el cursor */
-}
-
-/* Botón para abrir el modal */
-.open-modal {
-    background-color: var(--gris);
-    color: var(--blanco);
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.open-modal:hover {
-    background-color: var(--naranja);
-    transform: scale(1.05);
-}
-
-.open-modal:active {
-    transform: scale(0.95);
-}
-
-#lugares-por-descubrir {
-    padding: 20px;
-    text-align: center;
-}
-
-#lugares-por-descubrir h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-family: var(--fuente-principal);
-    text-underline-offset: var(--naranja);
-}
-
-#lugares-por-descubrir p {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    font-family: var(--fuente-secundaria);
-}
-
-.lugar-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.lugar-imagen {
-    width: 100%;
-    max-width: 500px;
-    max-height: 500px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-
-.lugar-descripcion {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    font-family: var(--fuente-secundaria);
-}
-
-.lugar-descripcion h3 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.lugar-descripcion p {
-    color: #666;
-}
-
-.parrafoizquierdo {
-    text-align: left;
-    padding-left: 10px;
-}
-
-#monstruos {
-    background-image: url(../imagenes/dado_dragon.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: var(--blanco);
-}
-
-.monster-entry {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.monster-entry img {
-    width: 150px;
-    height: auto;
-    border-radius: 5px;
-    margin-left: 10%;
-}
-
-.monster-description {
-    flex: 1;
-}
-
-.monster-description h3 {
-    font-family: var(--fuente-secundaria);
-    font-size: xx-large;
+p{
+    padding: 0.5vw;
 }
 
 /* Footer */
 footer {
-    font-size: 0.9em;
+    font-size: x-large;
     color: var(--blanco);
     display: flex;
     justify-content: center;
     gap: 20px;
-    background: var(--negro);
+    background: var(--fondosemitransparente);
     padding: 10px 0;
     margin: 0 auto;
-    width: 80%;
-    /* Cambio: 80% del 100% */
+    width: 100vw;
     flex-wrap: wrap;
     justify-content: space-around;
+    box-sizing: border-box; /* Asegura que el padding no afecte la altura */
 }
+
+/* mediaqueries.css */
 
 /* Media Queries para pantallas pequeñas */
 @media (max-width: 768px) {

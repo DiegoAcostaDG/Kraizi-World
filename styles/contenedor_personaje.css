@@ -1,0 +1,125 @@
+/* Estilo para la hoja de personaje */
+#personaje-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    padding: 2rem;
+    border-radius: 10px;
+    background: var(--gris);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#personaje-info {
+    flex-basis: 45%;
+    font-family: var(--fuente-secundaria);
+    font-size: 1.2rem;
+    color: var(--negro);
+    padding: 2rem;
+    background: var(--blanco);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-right: 2rem;
+    text-align: left;
+}
+
+#personaje-info h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--negro);
+    margin-bottom: 1.5rem;
+}
+
+#personaje-info h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--negro);
+    margin-bottom: 1.5rem;
+}
+
+#personaje-info p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Estilo de la imagen del personaje */
+#personaje-contenedor img {
+    max-width: 100%;
+    max-height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#personaje-contenedor img:hover {
+    transform: scale(1.05);
+}
+
+/* Puntos de habilidad */
+#puntos-habilidad {
+    font-size: 1.6rem;
+    font-family: var(--fuente-secundaria);
+    text-align: center;
+    margin-top: 3vh;
+    color: var(--negro);
+}
+/* Estilo del contenedor de atributos */
+#atributos-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3vh;
+    padding: 2rem;
+    background: var(--gris);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    margin: 0 auto;
+}
+
+.atributo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    background: var(--blanco);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.atributo:hover {
+    background: var(--hover-color);
+    transform: scale(1.05);
+}
+
+.atributo button {
+    background: var(--naranja);
+    color: var(--blanco);
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-family: var(--fuente-secundaria);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.atributo button:hover {
+    background: var(--h1);
+    transform: scale(1.05);
+}
+
+.atributo span {
+    font-size: 1.3rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--negro);
+}

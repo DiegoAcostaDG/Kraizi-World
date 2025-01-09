@@ -1,0 +1,72 @@
+body {
+    background-color: #f4f1e1;
+    font-family: 'Garamond', serif;
+    color: #3e2723;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #5d4037;
+    text-shadow: 2px 2px #d7ccc8;
+}
+
+.atributo {
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #8d6e63;
+    border-radius: 10px;
+    background-color: #efebe9;
+    box-shadow: 3px 3px 5px #8d6e63;
+}
+
+button {
+    background-color: #6d4c41;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Garamond', serif;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #5d4037;
+}
+
+#personaje-contenedor{
+    display: flex; 
+    align-items: flex-start; 
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-left: 10vw;
+    border: 2px solid #8d6e63;
+    border-radius: 10px;
+    background-color: #efebe9;
+    box-shadow: 3px 3px 5px #8d6e63;
+}
+
+#personaje-info {
+    max-width: 50%; 
+    max-height: 50%;
+    flex: 1;
+}
+
+#puntos-habilidad {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #5d4037;
+}
+img { 
+    max-width: 50%; 
+    max-height: 50vh; 
+    border: 2px solid #8d6e63; 
+    border-radius: 10px; 
+    box-shadow: 3px 3px 5px #8d6e63; 
+    flex: 0 0 200px;
+}

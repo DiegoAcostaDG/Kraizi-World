@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libro de Monstruos</title>
+    <!--Icono-->
+    <link rel="icon" type="image/png" href="imagenes/icono_kw.png">
+    <!--Estilo de Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/png" href="imagenes/icono_kw.png">
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Uncial+Antiqua&display=swap"
         rel="stylesheet">
+        <!--Hojas de estilos -->
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/videos.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/monstruos.css">
 </head>
 
 <body>
@@ -22,6 +28,7 @@
         <a href="index.html#razas">Razas</a>
         <a href="index.html#clases">Clases</a>
         <a href="monstruos.html">Libro de Monstruos</a>
+        <a href="hojapersonaje.html">Hoja de Personaje</a>
         <a href="formulario.html">Contacto</a>
     </nav>
 
@@ -31,61 +38,302 @@
     </video>
 
     <main id="monstruos">
+        <section id="a"></section>
+        <section id="b"></section>
+                <!-- Beholder -->
+                <div class="monster-entry low-level">
+                    <img src="imagenes/beholder-removebg-preview.png" alt="Beholder">
+                    <div class="monster-description">
+                        <h3>Beholder</h3>
+                        <button class="open-modal" data-modal="modal-Beholder">Más Info</button>
+                    </div>
+                </div>
+        <section id="c"></section>
+        <section id="d"></section>
+                <!-- Dragón -->
+                <div class="monster-entry ultra-level">
+                    <img src="imagenes/dragon3-removebg-preview.png" alt="Dragón">
+                    <div class="monster-description">
+                        <h3>Dragón</h3>
+                        <button class="open-modal" data-modal="modal-Dragon">Más info</button>
+                    </div>
+                </div>
+        <section id="e"></section>
+        <section id="f"></section>
+        <section id="g"></section>
+                <!-- Goblin -->  
+                <div class="monster-entry low-level">
+                    <img src="imagenes/Goblin.jpg" alt="Goblin">
+                    <div class="monster-description">
+                        <h3>Goblin</h3>
+                        <button class="open-modal" data-modal="modal-Goblin">Más Info</button>
+                    </div>
+                </div>
+        <section id="h"></section>
+        <section id="i"></section>
+        <section id="j"></section>
+        <section id="k"></section>
+        <section id="l"></section>
+                <!-- Monster Entry para el Lich -->
+                <div class="monster-entry ultra-level">
+                    <img src="imagenes/lich-removebg-preview.png" alt="Lich">
+                    <div class="monster-description">
+                        <h3>Lich</h3>
+                        <button class="open-modal" data-modal="modal-Lich">Más info</button>
+                    </div>
+                </div>
+        <section id="m"></section>
+                <!-- Mimic -->
+                <div class="monster-entry medium-level">
+                    <img src="imagenes/mimic-removebg-preview.png" alt="Mimic">
+                    <div class="monster-description">
+                        <h3>Mimic</h3>
+                        <button class="open-modal" data-modal="modal-Mimic">Más Info</button>
+                    </div>
+                </div>
+        <section id="n"></section>
+        <section id="o"></section>
+        <section id="p"></section>
+        <section id="q"></section>
+        <section id="r"></section>
+        <section id="s"></section>
+        <section id="t"></section>
+                <!-- Troll -->
+                <div class="monster-entry high-level">
+                    <img src="imagenes/troll-removebg-preview.png" alt="Troll">
+                    <div class="monster-description">
+                        <h3>Troll</h3>
+                        <button class="open-modal" data-modal="modal-Troll">Más Info</button>
+                    </div>
+                </div>
+        <section id="u"></section>
+        <section id="v"></section>
+        <section id="w"></section>
+        <section id="x"></section>
+        <section id="y"></section>
+        <section id="z"></section>
+
         <!-- Dragón -->
-        <div class="monster-entry">
+        <div class="monster-entry ultra-level">
             <img src="imagenes/dragon3-removebg-preview.png" alt="Dragón">
             <div class="monster-description">
                 <h3>Dragón</h3>
-                <p>Los dragones son majestuosos y temidos. Estas criaturas legendarias dominan los cielos y la magia.
-                    Cada dragón es diferente, pero todos comparten una inteligencia superior y un gran poder
-                    destructivo.</p>
+                <button class="open-modal" data-modal="modal-Dragon">Más info</button>
             </div>
         </div>
 
+        <!-- Modal Dragón -->
+        <div class="modal" id="modal-Dragon">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>Dragón</h1>
+                <div class="modal-body">
+                    <img src="imagenes/dragon_image-removebg-preview.png" alt="Dragón ilustración" class="modal-image">
+                    <div class="modal-text">
+                        <p>
+                            Los dragones son criaturas icónicas en *Dungeons & Dragons*, conocidas por su poder y majestuosidad. Se dividen en dos grandes categorías: **dragones cromáticos** y **dragones metálicos**.
+                        </p>
+
+                        <h4>Dragones Cromáticos</h4>
+                        <p>
+                            Los dragones cromáticos son usualmente malignos y se identifican por los colores vivos de sus escamas. Algunos ejemplos son:
+                        </p>
+                        <ul>
+                            <li><strong>Dragón Rojo:</strong> Feroz y amante del fuego y los tesoros.</li>
+                            <li><strong>Dragón Azul:</strong> Habita en desiertos y lanza rayos eléctricos.</li>
+                            <li><strong>Dragón Verde:</strong> Manipulador y astuto, con un aliento venenoso.</li>
+                            <li><strong>Dragón Negro:</strong> Cruel y vengativo, con aliento ácido.</li>
+                            <li><strong>Dragón Blanco:</strong> Salvaje y primitivo, emite un aliento gélido.</li>
+                        </ul>
+
+                        <h4>Dragones Metálicos</h4>
+                        <p>
+                            Los dragones metálicos, a diferencia de los cromáticos, suelen ser benignos y se distinguen por sus escamas metálicas brillantes. Algunos ejemplos son:
+                        </p>
+                        <ul>
+                            <li><strong>Dragón Dorado:</strong> Noble y sabio, puede lanzar fuego y asumir formas humanas.</li>
+                            <li><strong>Dragón Plateado:</strong> Protector y amigable, con aliento gélido y paralizante.</li>
+                            <li><strong>Dragón de Bronce:</strong> Amante del agua, con aliento eléctrico.</li>
+                            <li><strong>Dragón de Cobre:</strong> Juguetón y amante de los acertijos, su aliento es ácido.</li>
+                            <li><strong>Dragón de Latón:</strong> Conversador incansable, con aliento de fuego y sueño.</li>
+                        </ul>
+
+                        <p>
+                            Los dragones varían en tamaño y poder según su edad, desde crías hasta ancianos que acumulan siglos de sabiduría. <br> En una campaña, pueden ser aliados valiosos o formidables enemigos.
+                        </p>
+                        <img src="imagenes/finalPagina-removebg-preview.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Monster Entry para el Lich -->
+        <div class="monster-entry ultra-level">
+            <img src="imagenes/lich-removebg-preview.png" alt="Lich">
+            <div class="monster-description">
+                <h3>Lich</h3>
+                <button class="open-modal" data-modal="modal-Lich">Más info</button>
+            </div>
+        </div>
+                <!-- Modal Lich -->
+        <div class="modal" id="modal-Lich">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>Lich</h1>
+                <div class="modal-body">
+                    <img src="imagenes/lich-removebg-preview.png" alt="Lich ilustración" class="modal-image">
+                    <div class="modal-text">
+                        <p>
+                            El Lich es un ser inmortal que ha trascendido la muerte a través de la magia oscura. Estos poderosos magos buscan la inmortalidad a toda costa y a menudo lo logran creando un *Foco de Alma* (un objeto que alberga su alma) para evitar que su espíritu abandone su cuerpo.
+                        </p>
+
+                        <h4>Características del Lich</h4>
+                        <p>
+                            Los Liches son conocidos por su sabiduría arcana, y poseen un vasto conocimiento en magia necromántica. A menudo se convierten en maestros de la necromancia, capaces de resucitar a los muertos y controlar ejércitos de muertos vivientes.
+                        </p>
+
+                        <ul>
+                            <li><strong>Inmortalidad:</strong> Su alma está contenida en un objeto, lo que les da una vida eterna.</li>
+                            <li><strong>Control de los muertos:</strong> Pueden levantar a los muertos para que sirvan a su voluntad.</li>
+                            <li><strong>Poder arcano:</strong> Son increíblemente poderosos en magia oscura, manipulando fuerzas de vida y muerte.</li>
+                            <li><strong>Apariencia:</strong> A menudo tienen una apariencia esquelética o podrida, con una piel marchita y ojos brillantes de energía oscura.</li>
+                        </ul>
+
+                        <h4>La búsqueda del poder</h4>
+                        <p>
+                            La mayoría de los Liches fueron una vez poderosos magos que se obsesionaron con la idea de evitar la muerte. La búsqueda del conocimiento arcano y la práctica de magia prohibida los llevó por un camino oscuro, el cual terminó con ellos convirtiéndose en monstruos que acechan el mundo desde sus fortalezas ocultas.
+                        </p>
+
+                        <p>
+                            Los Liches son temidos por todos, tanto aliados como enemigos. Su sola presencia puede generar terror, y su poder es tan grande que pocos se atreven a enfrentarse a ellos directamente.
+                        </p>
+                        <img src="imagenes/finalPagina-removebg-preview.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Beholder -->
-        <div class="monster-entry">
+        <div class="monster-entry low-level">
             <img src="imagenes/beholder-removebg-preview.png" alt="Beholder">
             <div class="monster-description">
                 <h3>Beholder</h3>
-                <p>Los Beholders son aberraciones flotantes con un solo ojo central y numerosos tentáculos oculares.
-                    Cada ojo lanza un rayo mortal con propiedades mágicas. Estas criaturas son paranoicas y
-                    extremadamente inteligentes.</p>
+                <button class="open-modal" data-modal="modal-Beholder">Más Info</button>
             </div>
         </div>
 
         <!-- Mimic -->
-        <div class="monster-entry">
+        <div class="monster-entry medium-level">
             <img src="imagenes/mimic-removebg-preview.png" alt="Mimic">
             <div class="monster-description">
                 <h3>Mimic</h3>
-                <p>Los Mimics son depredadores que adoptan la forma de objetos inanimados, como cofres o puertas, para
-                    emboscar a sus presas. Son una trampa viviente que pocos aventureros olvidan.</p>
+                <button class="open-modal" data-modal="modal-Mimic">Más Info</button>
             </div>
         </div>
 
         <!-- Troll -->
-        <div class="monster-entry">
+        <div class="monster-entry high-level">
             <img src="imagenes/troll-removebg-preview.png" alt="Troll">
             <div class="monster-description">
                 <h3>Troll</h3>
-                <p>Los trolls son criaturas regenerativas y brutales. Aunque no son muy inteligentes, su fuerza y su
-                    habilidad para curarse los hacen enemigos formidables.</p>
+                <button class="open-modal" data-modal="modal-Troll">Más Info</button>
             </div>
         </div>
 
-        <!-- Lich -->
-        <div class="monster-entry">
+        <!-- Goblin -->  
+        <div class="monster-entry low-level">
+            <img src="imagenes/Goblin.jpg" alt="Goblin">
+            <div class="monster-description">
+                <h3>Goblin</h3>
+                <button class="open-modal" data-modal="modal-Goblin">Más Info</button>
+            </div>
+        </div>
+        <!-- Duplicados-->
+                 <!-- Goblin -->  
+        <div class="monster-entry low-level">
+            <img src="imagenes/Goblin.jpg" alt="Goblin">
+            <div class="monster-description">
+                <h3>Goblin</h3>
+                <button class="open-modal" data-modal="modal-Goblin">Más Info</button>
+            </div>
+        </div>
+                <!-- Goblin -->  
+                <div class="monster-entry low-level">
+                    <img src="imagenes/Goblin.jpg" alt="Goblin">
+                    <div class="monster-description">
+                        <h3>Goblin</h3>
+                        <button class="open-modal" data-modal="modal-Goblin">Más Info</button>
+                    </div>
+                </div>
+                        <!-- Monster Entry para el Lich -->
+        <div class="monster-entry ultra-level">
             <img src="imagenes/lich-removebg-preview.png" alt="Lich">
             <div class="monster-description">
                 <h3>Lich</h3>
-                <p>Los Liches son magos que han trascendido la muerte para convertirse en seres no muertos. Su poder
-                    arcano y su astucia los convierten en uno de los enemigos más peligrosos.</p>
+                <button class="open-modal" data-modal="modal-Lich">Más info</button>
             </div>
         </div>
+                <!-- Troll -->
+                <div class="monster-entry high-level">
+                    <img src="imagenes/troll-removebg-preview.png" alt="Troll">
+                    <div class="monster-description">
+                        <h3>Troll</h3>
+                        <button class="open-modal" data-modal="modal-Troll">Más Info</button>
+                    </div>
+                </div>
+                        <!-- Troll -->
+        <div class="monster-entry high-level">
+            <img src="imagenes/troll-removebg-preview.png" alt="Troll">
+            <div class="monster-description">
+                <h3>Troll</h3>
+                <button class="open-modal" data-modal="modal-Troll">Más Info</button>
+            </div>
+        </div>
+                        <!-- Goblin -->  
+                        <div class="monster-entry low-level">
+                            <img src="imagenes/Goblin.jpg" alt="Goblin">
+                            <div class="monster-description">
+                                <h3>Goblin</h3>
+                                <button class="open-modal" data-modal="modal-Goblin">Más Info</button>
+                            </div>
+                        </div>
+                                <!-- Mimic -->
+        <div class="monster-entry medium-level">
+            <img src="imagenes/mimic-removebg-preview.png" alt="Mimic">
+            <div class="monster-description">
+                <h3>Mimic</h3>
+                <button class="open-modal" data-modal="modal-Mimic">Más Info</button>
+            </div>
+        </div>
+                <!-- Mimic -->
+                <div class="monster-entry medium-level">
+                    <img src="imagenes/mimic-removebg-preview.png" alt="Mimic">
+                    <div class="monster-description">
+                        <h3>Mimic</h3>
+                        <button class="open-modal" data-modal="modal-Mimic">Más Info</button>
+                    </div>
+                </div>
+                        <!-- Mimic -->
+        <div class="monster-entry medium-level">
+            <img src="imagenes/mimic-removebg-preview.png" alt="Mimic">
+            <div class="monster-description">
+                <h3>Mimic</h3>
+                <button class="open-modal" data-modal="modal-Mimic">Más Info</button>
+            </div>
+        </div>
+                                <!-- Goblin -->  
+                                <div class="monster-entry low-level">
+                                    <img src="imagenes/Goblin.jpg" alt="Goblin">
+                                    <div class="monster-description">
+                                        <h3>Goblin</h3>
+                                        <button class="open-modal" data-modal="modal-Goblin">Más Info</button>
+                                    </div>
+                                </div>
+
     </main>
+
     <footer>
         <p>&copy; 2024 Kraizi World</p>
     </footer>
+    <script src="scripts/modal.js"></script>
 </body>
 
 </html>

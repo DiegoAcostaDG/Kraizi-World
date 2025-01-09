@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kraizi World</title>
+    <!--Hoja de estilos-->
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/videos.css">
+    <link rel="stylesheet" href="styles/contenedor_personaje.css">
+        <!-- Icono de la página -->
+    <link rel="icon" type="image/png" href="imagenes/icono_kw.png">
+    <!--Estilo de texto de Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Uncial+Antiqua&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Kraizi World</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="index.html#razas">Razas</a>
+        <a href="index.html#clases">Clases</a>
+        <a href="monstruos.html"> Libro de Monstruos</a>
+        <a href="hojapersonaje.html">Hoja de Personaje</a>
+        <a href="formulario.html">Contacto</a>
+    </nav>
+    <video class="background-video" autoplay muted loop>
+        <source src="videos/particulas_fondo.mp4" type="video/mp4">
+        Tu navegador no soporta este formato de video.
+    </video>
+    <main>
+        <h1> Hoja de Personaje</h1>
+    <div id="personaje-contenedor">
+        <div id="personaje-info"></div>
+        <img src="imagenes/clase_guerrero.jpg" alt="Imagen del personaje">
+    </div>
+    <div id="puntos-habilidad">Puntos de Habilidad: 0</div>
+    <div id="atributos-contenedor">
+    <div class="atributo">
+        <button onclick="incrementar('fuerza')">Incrementar Fuerza</button>
+        <button onclick="decrementar('fuerza')">Decrementar Fuerza</button>
+        <span id="fuerza">Fuerza: 0</span>
+    </div>
+    <div class="atributo">
+        <button onclick="incrementar('constitucion')">Incrementar Constitución</button>
+        <button onclick="decrementar('constitucion')">Decrementar Constitución</button>
+        <span id="constitucion">Constitución: 0</span>
+    </div>
+    <div class="atributo">
+        <button onclick="incrementar('inteligencia')">Incrementar Inteligencia</button>
+        <button onclick="decrementar('inteligencia')">Decrementar Inteligencia</button>
+        <span id="inteligencia">Inteligencia: 0</span>
+    </div>
+    <div class="atributo">
+        <button onclick="incrementar('carisma')">Incrementar Carisma</button>
+        <button onclick="decrementar('carisma')">Decrementar Carisma</button>
+        <span id="carisma">Carisma: 0</span>
+    </div>
+</div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Kraizi World</p>
+    </footer>
+    <script src="scripts/personaje.js"></script>
+</body>
+
+</html>

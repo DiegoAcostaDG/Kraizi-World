@@ -1,0 +1,59 @@
+/* Formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-formulario);
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+label {
+    font-size: var(--tamano-fuente);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilos de input, select, textarea */
+input,
+select,
+textarea {
+    padding: 8px;
+    font-size: var(--tamano-fuente);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--naranja);
+    outline: none;
+}
+/* buttons.css */
+
+/* Botones */
+button {
+    padding: 10px;
+    font-size: var(--tamano-boton);
+    color: var(--blanco);
+    background-color: var(--naranja);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--naranja-oscuro);
+}
+
+.reset-button {
+    background-color: var(--gris);
+}
+
+.reset-button:hover {
+    background-color: var(--naranja-oscuro);
+}
