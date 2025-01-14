@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/videos.css">
     <link rel="stylesheet" href="styles/contenedor_personaje.css">
-        <!-- Icono de la página -->
+    <!-- Icono de la página -->
     <link rel="icon" type="image/png" href="imagenes/icono_kw.png">
     <!--Estilo de texto de Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,34 +35,95 @@
         Tu navegador no soporta este formato de video.
     </video>
     <main>
-        <h1> Hoja de Personaje</h1>
-    <div id="personaje-contenedor">
-        <div id="personaje-info"></div>
-        <img src="imagenes/mr_seta-removebg-preview.png" alt="Imagen del personaje">
-    </div>
-    <div id="puntos-habilidad">Puntos de Habilidad: 0</div>
-    <div id="atributos-contenedor">
-    <section class="atributo">
-        <button onclick="incrementar('fuerza')">Incrementar Fuerza</button>
-        <button onclick="decrementar('fuerza')">Decrementar Fuerza</button>
-        <span id="fuerza">Fuerza: 0</span>
-    </section>
-    <section class="atributo">
-        <button onclick="incrementar('constitucion')">Incrementar Constitución</button>
-        <button onclick="decrementar('constitucion')">Decrementar Constitución</button>
-        <span id="constitucion">Constitución: 0</span>
-    </section>
-    <section class="atributo">
-        <button onclick="incrementar('inteligencia')">Incrementar Inteligencia</button>
-        <button onclick="decrementar('inteligencia')">Decrementar Inteligencia</button>
-        <span id="inteligencia">Inteligencia: 0</span>
-    </section>
-    <section class="atributo">
-        <button onclick="incrementar('carisma')">Incrementar Carisma</button>
-        <button onclick="decrementar('carisma')">Decrementar Carisma</button>
-        <span id="carisma">Carisma: 0</span>
-    </section>
-    </div>
+        <div id="personaje-contenedor">
+            <div id="personaje-info"></div>
+        
+    <!-- Contenedor para la imagen -->
+    <div id="personaje-imagen-contenedor">
+        <img id="imagen-personaje" src="" alt="">
+
+        <!-- Elemento para cargar una imagen -->
+        <form action=""> 
+            <label for="imagen" class="btn-subir-imagen">Subir imagen</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*" hidden onchange="cargarImagen(event)">
+        </form>    
+        </div>
+        </div> 
+        <h1 id="puntos-habilidad"></h1>       
+        <div id="atributos-contenedor">
+            <!-- Fuerza -->
+            <div class="atributo">
+                <span class="atributo-label"><h3>Fuerza</h3></span>
+                <div>
+                    <span id="fuerza">Fuerza: 0</span>
+                    <div class="botones"> 
+                        <button onclick="incrementar('fuerza')">+</button>
+                        <button onclick="decrementar('fuerza')">-</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Destreza -->
+            <div class="atributo">
+                <span class="atributo-label"><h3>Destreza</h3></span>
+                <div>
+                    <span id="destreza">Destreza: 0</span>
+                    <div class="botones"> 
+                        <button onclick="incrementar('destreza')">+</button>
+                        <button onclick="decrementar('destreza')">-</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Constitución -->
+            <div class="atributo">
+                <span class="atributo-label"><h3>Constitución</h3></span>
+                <div>
+                    <span id="constitucion">Constitución: 0</span>
+                    <div class="botones"> 
+                        <button onclick="incrementar('constitucion')">+</button>
+                        <button onclick="decrementar('constitucion')">-</button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Inteligencia -->
+            <div class="atributo">
+                <span class="atributo-label"><h3>Inteligencia</h3></span>
+                <div>
+                    <span id="inteligencia">Inteligencia: 0</span>
+                    <div class="botones"> 
+                        <button onclick="incrementar('inteligencia')">+</button>
+                        <button onclick="decrementar('inteligencia')">-</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sabiduría -->
+            <div class="atributo">
+                <span class="atributo-label"><h3>Sabiduría</h3></span>
+                <div>
+                    <span id="sabiduria">Sabiduría: 0</span>
+                    <div class="botones"> 
+                        <button onclick="incrementar('sabiduria')">+</button>
+                        <button onclick="decrementar('sabiduria')">-</button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Carisma -->
+            <div class="atributo">
+                <span class="atributo-label"><h3>Carisma</h3></span>
+                <div>
+                    <span id="carisma">Carisma: 0</span>
+                    <div class="botones"> 
+                        <button onclick="incrementar('carisma')">+</button>
+                        <button onclick="decrementar('carisma')">-</button>
+                    </div>
+                </div>
+            </div>        
+        </div>
+        
     </main>
 
     <footer>

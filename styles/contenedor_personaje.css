@@ -8,12 +8,13 @@
     border-radius: 10px;
     background: var(--gris);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    width: 90%;
+    width: 100vw;
     margin: 0 auto;
+    flex-direction: row; /* Alinea los elementos en fila (horizontalmente) */
 }
 
 #personaje-info {
-    flex-basis: 45%;
+    flex-basis: 100%;
     font-family: var(--fuente-secundaria);
     font-size: 1.2rem;
     color: var(--negro);
@@ -44,17 +45,50 @@
     margin-bottom: 1rem;
 }
 
-/* Estilo de la imagen del personaje */
-#personaje-contenedor img {
-    max-width: 100%;
-    max-height: 70vh;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+/* Estilo del contenedor de la imagen */
+#personaje-imagen-contenedor {
+    display: flex;
+    flex-direction: column; /* Alinea la imagen y el formulario en una columna */
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    max-width: 45%;  /* Limita el tamaño del contenedor de la imagen */
+    gap: 5vh; /* Añade un espacio entre la imagen y el formulario */
 }
 
-#personaje-contenedor img:hover {
+#personaje-imagen-contenedor img {
+    max-width: 100%;
+    max-height: 70vh;
+}
+
+/* Estilo del formulario */
+#personaje-imagen-contenedor form {
+    display: flex;
+    flex-direction: column; /* Alinea el contenido del formulario en columna */
+    gap: 10px; /* Añade un pequeño espacio entre el label y el input */
+}
+
+/* Botón personalizado para seleccionar archivo */
+.btn-subir-imagen {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: var(--naranja);
+    color: var(--blanco);
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-subir-imagen:hover {
+    background: var(--negro);
     transform: scale(1.05);
+}
+
+/* Ocultar el input file original */
+#personaje-imagen-contenedor input[type="file"] {
+    display: none;
 }
 
 /* Puntos de habilidad */
@@ -65,6 +99,7 @@
     margin-top: 3vh;
     color: var(--negro);
 }
+
 /* Estilo del contenedor de atributos */
 #atributos-contenedor {
     display: flex;
@@ -76,22 +111,37 @@
     background: var(--gris);
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    margin: 0 auto;
+    width: 100vw;
+    margin: 10 auto;
 }
 
 .atributo {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+    justify-content: flex-start;
     align-items: center;
     padding: 1.5rem;
     background: var(--blanco);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 150px;
+    width: 20vw;
     text-align: center;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    gap: 1rem; /* Espacio entre los elementos */
+}
+.atributo div {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos internamente */
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem; /* Espacio entre el texto y los botones */
+}
+
+.atributo .botones {
+    display: flex; /* Coloca los botones en fila */
+    flex-direction: row; /* Asegura que estén horizontalmente */
+    gap: 1rem; /* Espacio entre los botones */
+    margin-top: 0.5rem;
 }
 
 .atributo:hover {
@@ -103,22 +153,137 @@
     background: var(--naranja);
     color: var(--blanco);
     border: none;
-    padding: 0.8rem 1rem;
-    border-radius: 10px;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
     font-family: var(--fuente-secundaria);
     font-size: 1rem;
-    margin-bottom: 1rem;
 }
 
 .atributo button:hover {
-    background: var(--h1);
+    background: var(--negro);
     transform: scale(1.05);
 }
 
 .atributo span {
+    padding: 0rem 3rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--negro);
+}
+
+/* Agregar estilos para los inputs de los atributos */
+.atributo input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 5rem;
+    font-family: var(--fuente-secundaria);
+    border: 2px solid var(--gris-claro);
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.atributo input:focus {
+    border-color: var(--naranja);
+    outline: none;
+}
+
+/* Ajustar estilos para el contenedor de cada atributo */
+.atributo-label {
+    font-size: 1.5rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--negro);
+    margin-bottom: 0.5rem; /* Espacio entre el título y el resto */
+}
+
+/* Estilo para el texto de cada atributo */
+.atributo span {
     font-size: 1.3rem;
     font-family: var(--fuente-secundaria);
     color: var(--negro);
+    margin-bottom: 1rem;
+}
+
+/*Estilo de ganar experiencia*/
+.barra-experiencia-container {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+    height: 20px;
+}
+
+.barra-experiencia {
+    height: 100%;
+    background-color: rgb(221, 160, 221);
+    /* Color de la barra */
+    border-radius: 10px;
+    width: 0%; /* Se actualiza con JavaScript */
+    transition: width 0.5s ease-in-out;
+}
+
+#experiencia-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-weight: bold;
+}
+
+/* EStilo de la barra de vida */
+.barra-vida-container{
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+    height: 20px;
+}
+
+.barra-vida{
+    height: 100%;
+    background-color: rgb(53, 218, 209);
+    border-radius: 10px;
+    width: 0%; /* Se actualiza con JavaScript */
+    transition: width 0.5s ease-in-out;
+}
+
+#vida-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-weight: bold;
+}
+
+
+/* EStilo de la barra de maná */
+.barra-mana-container{
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+    height: 20px;
+}
+
+.barra-mana{
+    height: 100%;
+    background-color: lightpink; /* Color de la barra */
+    border-radius: 10px;
+    width: 0%; /* Se actualiza con JavaScript */
+    transition: width 0.5s ease-in-out;
+}
+
+#mana-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-weight: bold;
 }

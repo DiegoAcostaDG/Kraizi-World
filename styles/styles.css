@@ -1,6 +1,5 @@
 /* Paleta de colores y variables de texto */
 :root {
-    --h1:#3e2723;
     --naranja: #E07A5F;
     --naranja-oscuro: #c99621;
     --blanco: #F4F1DE;
@@ -9,33 +8,46 @@
     --hover-color: #F2CC8F;
     --nav: #e7f5e9;
     --transparente: rgba(0, 0, 0, 0);
-    --fondosemitransparente:rgba(0, 0, 0, 0.5);
+    --fondosemitransparente: rgba(0, 0, 0, 0.5);
     /* Colores para niveles de monstruos */
     --ultra-level-color: lightgrey;  
     --high-level-color: #f68989;   
     --medium-level-color: lightblue; 
     --low-level-color: lightgreen;
-    /*Estilo de texto*/
+    /* Estilo de texto */
     --fuente-principal: 'Uncial Antiqua', system-ui;
     --fuente-secundaria: 'MedievalSharp', sans-serif;
     --tamano-fuente: 1rem;
-    --espacio-formulario: 15px;
+    --espacio-formulario: 1rem;
     --tamano-boton: 1rem;
-    --radio-checkbox-size: 20px;
+    --radio-checkbox-size: 1.25rem;
 }
 
-/* Cuerpo de la página */
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding y el borde no aumenten el tamaño total del elemento */
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Elimina el desplazamiento horizontal */
+    font-size: 1rem;
+}
+
 body {
-    min-height: 100vh; 
+    min-height: 100vh;
     display: flex;
-    flex-direction: column; 
-    justify-content: space-between; 
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Estilo de Cabecera */
 header {
     color: var(--blanco);
-    padding: 10px 10px;
+    padding: 2rem 0;
     text-align: center;
     font-size: 2rem;
     font-family: var(--fuente-principal);
@@ -47,16 +59,16 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
-    font-size: large;
+    gap: 1.25rem;
+    font-size: 1.125rem;
     background: var(--negro);
-    padding: 1vw;
+    padding: 1rem;
     margin: 0;
     position: fixed;
     top: 0;
-    right: 1px; 
+    right: 0;
     height: 100vh;
-    width: 8vw; 
+    width: 10vw;
     z-index: 10;
 }
 
@@ -64,7 +76,7 @@ nav a {
     color: var(--blanco);
     text-decoration: none;
     font-size: 1.2em;
-    padding: 10px;
+    padding: 0.625rem;
 }
 
 nav a:hover {
@@ -76,13 +88,13 @@ nav a:hover {
 main {
     position: relative;
     text-align: center;
-    padding: 2vh 2vw; /* Agrega márgenes internos */
+    padding: 2rem 5rem;
     z-index: 1;
     background: var(--blanco);
     color: var(--negro);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    width: calc(92vw - 4vw); /* Ajusta el ancho para respetar los márgenes laterales */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.625rem;
+    width: calc(100vw - 10vw); 
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap; /* Permite que los monstruos se ajusten automáticamente */
@@ -90,45 +102,99 @@ main {
     flex-grow: 1;
 }
 
-h3{
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    border: 1px solid #ccc; /* Borde de la tabla */
+}
+
+thead th {
+    background-color: #EE888B; /* Color de fondo del encabezado */
+    color: #fff; /* Color del texto del encabezado */
     text-align: center;
-    font-size: xx-large;
-    color:var(--h1)
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+}
+
+tbody td {
+    padding: 10px;
+    border: 1px solid #ccc; /* Borde de las celdas */
+    color: #333; /* Color del texto */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fff; /* Color de fondo alternativo para filas pares */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #fff; /* Color de fondo alternativo para filas impares */
+}
+
+strong {
+    color: #EE888B; /* Color del texto en negrita */
+}
+
+th[colspan] {
+    text-align: center;
+    font-size: 18px;
+    padding: 15px;
+}
+
+td {
+    vertical-align: middle; /* Alineación vertical de contenido */
+}
+
+table caption {
+    caption-side: top;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.tablebarra{
+    border: none;
+}
+
+
+h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--negro);
 }
 
 /* Estilo personalizado para el encabezado de secciones */
 section h2 {
-    font-family: "Uncial Antiqua", system-ui;
+    font-family: var(--fuente-principal);
     text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin: 2rem 0;
     background: var(--naranja);
     color: var(--blanco);
-    padding: 10px;
-    border-radius: 5px;
-    display: inline-block;
-}
-p{
-    padding: 0.5vw;
+    padding: 1rem 3rem;
+    border-radius: 0.3125rem;
 }
 
 /* Footer */
 footer {
-    font-size: x-large;
+    font-size: 1.25rem;
     color: var(--blanco);
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1.25rem;
     background: var(--fondosemitransparente);
-    padding: 10px 0;
+    padding: 0.625rem 0;
     margin: 0 auto;
-    width: 100vw;
+    width: 100%;
     flex-wrap: wrap;
     justify-content: space-around;
-    box-sizing: border-box; /* Asegura que el padding no afecte la altura */
+    box-sizing: border-box;
 }
-
-/* mediaqueries.css */
 
 /* Media Queries para pantallas pequeñas */
 @media (max-width: 768px) {
@@ -141,7 +207,7 @@ footer {
     }
 
     .tooltip-text {
-        width: 150px;
+        width: 10rem;
     }
 }
 
@@ -152,10 +218,10 @@ footer {
 
     button {
         font-size: 0.8rem;
-        padding: 8px;
+        padding: 0.5rem;
     }
 
     .tooltip-text {
-        width: 120px;
+        width: 7.5rem;
     }
 }
